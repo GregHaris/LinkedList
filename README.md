@@ -1,2 +1,3 @@
-# simple-API-Assignment
-UI: Creating a search box for users to search GIFs from giphy.com
+# Linked List Data Structure Project
+
+Practicing the Linked List Data structure through this assignment to get a better understnding of it and how to use it.
