@@ -98,6 +98,59 @@ class LinkedList {
     return null;
   }
 
+  //  detertermine if list contains a node value
+  contains(value) {
+    if (this.head === null) {
+      console.log('The list is empty');
+      return false;
+    }
+
+    let current = this.head;
+    // traverse to the last node
+    while (current) {
+      if (
+        typeof current.value === 'string' &&
+        current.value.toLowerCase() === value.toLowerCase()
+      ) {
+        console.log(true);
+        return true;
+      } else if (current.value === value) {
+        console.log(true);
+        return true;
+      }
+      current = current.nextNode;
+    }
+    console.log(false);
+    return false;
+  }
+
+  find(value) {
+    if (this.head === null) {
+      console.log('The list is empty');
+      return null;
+    }
+
+    let current = this.head;
+    let count = 0;
+    // traverse to the last node
+    while (current) {
+      if (
+        typeof current.value === 'string' &&
+        current.value.toLowerCase() === value.toLowerCase()
+      ) {
+        console.log(`Found '${value}' at index ${count}`);
+        return count;
+      } else if (current.value === value) {
+        console.log(`Found '${value}' at index ${count}`);
+        return count;
+      }
+      count++;
+      current = current.nextNode;
+    }
+    console.log(`'${value}' not in list`);
+    return null;
+  }
+
   // remove a node from a specific index
   removeAt(index) {
     if (index < 0 || index >= this.size) {
@@ -205,7 +258,15 @@ list.append('parrot');
 list.append('hamster');
 list.append('snake');
 list.append('turtle');
+
 list.insertAt('monkey', 2);
+
+list.getListSize();
+
+list.pop();
+list.find('cat');
+list.contains('lion');
+
 list.getListSize();
 
 list.printListValue();
