@@ -1,0 +1,1 @@
+{"version":3,"file":"app.css","mappings":"AAAA;EACE,SAAS;EACT,UAAU;EACV,sBAAsB;AACxB","sources":["webpack://linked-list-data-structure-project/./src/style.css"],"sourcesContent":["* {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n}\n"],"names":[],"sourceRoot":""}
