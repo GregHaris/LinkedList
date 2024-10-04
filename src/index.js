@@ -124,6 +124,24 @@ class LinkedList {
     this.size--;
   }
 
+  getListSize() {
+    if (this.size === 0) {
+      console.log('The list is empty');
+      return;
+    } else {
+      console.log(`The list has ${this.size} node${this.size > 1 ? 's' : ''}`);
+    }
+  }
+
+  getListHead() {
+    if (this.head === null) {
+      console.log('The list is empty');
+      return;
+    } else {
+      console.log(this.head.value);
+    }
+  }
+
   // print list data
   printListValue() {
     let current = this.head;
@@ -145,12 +163,13 @@ const list = new LinkedList();
 
 list.append('dog');
 list.append('cat');
-list.append('parrot');
-list.append('hamster');
-list.append('snake');
-list.append('turtle');
-list.insertAt('monkey', 2);
-
-list.removeAt(0);
+// list.append('parrot');
+// list.append('hamster');
+// list.append('snake');
+// list.append('turtle');
+// list.insertAt('monkey', 2);
+list.getListSize();
 
 list.printListValue();
+
+list.getListHead();
