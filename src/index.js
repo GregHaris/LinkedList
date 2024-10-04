@@ -95,6 +95,7 @@ class LinkedList {
       count++;
       current = current.nextNode;
     }
+
     return null;
   }
 
@@ -120,10 +121,12 @@ class LinkedList {
       }
       current = current.nextNode;
     }
+
     console.log(false);
     return false;
   }
 
+  // get the index of a node in the list
   find(value) {
     if (this.head === null) {
       console.log('The list is empty');
@@ -147,6 +150,7 @@ class LinkedList {
       count++;
       current = current.nextNode;
     }
+
     console.log(`'${value}' not in list`);
     return null;
   }
@@ -233,6 +237,26 @@ class LinkedList {
     console.log(current.value);
   }
 
+  // convert list to string and diplay it.
+  toString() {
+    if (this.head === null) {
+      console.log('The list is empty');
+      return '';
+    }
+
+    let current = this.head;
+    let formattedList = '';
+
+    while (current) {
+      formattedList += `( ${current.value} ) -> `;
+      current = current.nextNode;
+    }
+
+    formattedList += 'null';
+    console.log(formattedList);
+    return formattedList;
+  }
+
   // print list data
   printListValue() {
     let current = this.head;
@@ -270,5 +294,6 @@ list.contains('lion');
 list.getListSize();
 
 list.printListValue();
+list.toString();
 
 list.getListTail();
