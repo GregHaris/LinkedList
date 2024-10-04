@@ -124,6 +124,30 @@ class LinkedList {
     this.size--;
   }
 
+  // delete the last list node
+  pop() {
+    if (this.head === null) {
+      console.log('The list is empty');
+      return;
+    }
+
+    let current = this.head;
+    let previous = null;
+
+    // traverse to the last node
+    while (current.nextNode !== null) {
+      previous = current;
+      current = current.nextNode;
+    }
+
+    if (previous === null) {
+      this.head = null;
+    } else {
+      previous.nextNode = null;
+    }
+    this.size--;
+  }
+
   getListSize() {
     if (this.size === 0) {
       console.log('The list is empty');
@@ -140,6 +164,20 @@ class LinkedList {
     } else {
       console.log(this.head.value);
     }
+  }
+
+  // print the last list node value
+  getListTail() {
+    if (this.head === null) {
+      console.log('The list is empty');
+      return;
+    }
+    let current = this.head;
+    while (current.nextNode !== null) {
+      current = current.nextNode;
+    }
+
+    console.log(current.value);
   }
 
   // print list data
@@ -163,13 +201,13 @@ const list = new LinkedList();
 
 list.append('dog');
 list.append('cat');
-// list.append('parrot');
-// list.append('hamster');
-// list.append('snake');
-// list.append('turtle');
-// list.insertAt('monkey', 2);
+list.append('parrot');
+list.append('hamster');
+list.append('snake');
+list.append('turtle');
+list.insertAt('monkey', 2);
 list.getListSize();
 
 list.printListValue();
 
-list.getListHead();
+list.getListTail();
